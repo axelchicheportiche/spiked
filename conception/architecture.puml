@@ -1,0 +1,27 @@
+@startuml architecture
+
+allow_mixing
+
+node "Frontend" {
+    component Client [
+    Vue.js
+    ]
+}
+
+database "DB" {
+    component DB [
+    PostgreSQL
+    ]
+}
+
+node "Backend" {
+    component Server [
+    Express
+    ]
+    port API
+}
+
+DB --> Server
+Client --> API
+
+@enduml
