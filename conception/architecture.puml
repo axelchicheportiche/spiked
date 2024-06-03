@@ -1,13 +1,27 @@
 @startuml architecture
 
-node "Frontend" {
-    Client app
-}
+allow_mixing
 
-database "db" {
-    component PostgreSQL [
-    Database
+node "Frontend" {
+    component Client [
+    Vue.js
     ]
 }
+
+database "DB" {
+    component DB [
+    PostgreSQL
+    ]
+}
+
+node "Backend" {
+    component Server [
+    Express
+    ]
+    port API
+}
+
+DB --> Server
+Client --> API
 
 @enduml
