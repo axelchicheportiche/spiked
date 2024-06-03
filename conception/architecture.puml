@@ -1,0 +1,13 @@
+@startuml architecture
+
+node "Frontend" {
+    Client app
+}
+
+database "db" {
+    component PostgreSQL [
+    Database
+    ]
+}
+
+@enduml
